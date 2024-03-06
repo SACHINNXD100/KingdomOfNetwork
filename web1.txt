@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to My Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            text-align: center;
+        }
+        input[type="text"] {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="firstPage">
+        <h2>Please enter your Discord name:</h2>
+        <input type="text" id="discordName" placeholder="Enter your Discord name">
+        <button onclick="openMainPage()">Submit</button>
+    </div>
+
+    <div class="container" id="mainPage" style="display: none;">
+        <h2>Kingdom Of Network</h2>
+        <p>Welcome, <span id="welcomeName"></span>!</p>
+        <a href="https://discord.com/invite/knnetwork">Join Our Discord Server</a>
+    </div>
+
+    <script>
+        function openMainPage() {
+            var discordName = document.getElementById("discordName").value;
+            document.getElementById("welcomeName").innerText = discordName;
+            document.getElementById("firstPage").style.display = "none";
+            document.getElementById("mainPage").style.display = "block";
+        }
+    </script>
+</body>
+</html>
